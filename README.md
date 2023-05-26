@@ -22,8 +22,7 @@ Patricio Benavides - Rolando Castro - Nelson Quiñinao - Carlos Jara
 
 ## Guia de uso (Hacer uso de imágenes o un video tutorial para su uso)
 
-## Enlace a vídeo con la explicación del código desarrollado y del fenómeno
-## físico desarrollado.
+## Enlace a vídeo con la explicación del código desarrollado y del fenómeno físico desarrollado.
 
 ## Conclusiones
 
