@@ -1,7 +1,7 @@
 import pygame 
 
-width = 1280
-height = 720
+width = 1800 ## ancho
+height = 960 ## alto
 rojo = (255,0,0)
 negro =(0,0,0) 
 screen = pygame.display.set_mode((width, height))
