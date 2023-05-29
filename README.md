@@ -4,7 +4,7 @@
 Patricio Benavides - Rolando Castro - Nelson Quiñinao - Carlos Jara
 ### Descripción
 
-### Evento físico a simular
+#### Evento físico a simular
 
 ##### Breve historia asociada (origen)
 
