@@ -1,7 +1,7 @@
 # Eva-Transdisciplinar-2023-B2-S1
 ### Plano Inclinado(Dinamica) - B2-S1
 ### Integrantes 
-Patricio Benavides - Rolando Castro - Nelson Quiñinao - Carlos Jara
+Patricio Benavides - Rolando Castro - Nelson Quiñinao
 ### Descripción
 
 #### Evento físico a simular
