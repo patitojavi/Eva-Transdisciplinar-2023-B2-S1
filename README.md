@@ -5,15 +5,12 @@ Patricio Benavides - Rolando Castro - Nelson Quiñinao
 ### Descripción
 
 #### Evento físico a simular
+Plano inclinado.
+Un plano inclinado es una superficie plana que forma un ángulo con respecto a la horizontal. Se utiliza en la física para analizar el movimiento y la interacción de fuerzas en objetos. Al colocar un objeto sobre un plano inclinado, interactúa con fuerzas gravitatorias y normales. La fuerza normal contrarresta parcialmente la fuerza de gravedad, reduciendo la carga sobre el plano, mientras que la fuerza paralela al plano provoca el movimiento o deslizamiento del objeto a lo largo de la superficie inclinada. La ley de Newton y la resolución de fuerzas se utilizan para analizar las relaciones entre las fuerzas y las aceleraciones en el plano inclinado. Factores como el coeficiente de fricción y las características del objeto y el plano también se consideran en los cálculos. En resumen, un plano inclinado es una herramienta para estudiar el movimiento y las fuerzas al reducir la fuerza necesaria para mover objetos a expensas de aumentar la distancia a lo largo del plano.
 
 ##### Breve historia asociada (origen)
 El plano inclinado es una herramienta simple y antigua que ha sido utilizada por diversas civilizaciones a lo largo de la historia. Su origen exacto es difícil de rastrear, ya que ha sido utilizado por diferentes culturas de forma independiente.
-
-En la antigüedad, el uso de rampas inclinadas se remonta al antiguo Egipto, donde los egipcios las emplearon para construir las famosas pirámides. Las rampas inclinadas permitían mover grandes bloques de piedra hacia arriba para la construcción de las estructuras monumentales.
-
-En la antigua Grecia, el filósofo Arquímedes realizó contribuciones significativas al estudio de los principios mecánicos, incluido el uso de planos inclinados. A través de sus experimentos, Arquímedes desarrolló una comprensión avanzada de los principios de la palanca, el plano inclinado y otros dispositivos mecánicos.
-
-Hoy en día, el plano inclinado sigue siendo una herramienta esencial en la física y la ingeniería. Se utiliza para analizar el movimiento y la fuerza en situaciones en las que un objeto se desliza o se mueve sobre una superficie inclinada.
+En la antigüedad, el uso de rampas inclinadas se remonta al antiguo Egipto, donde los egipcios las emplearon para construir las famosas pirámides. Las rampas inclinadas permitían mover grandes bloques de piedra hacia arriba para la construcción de las estructuras monumentales. En la antigua Grecia, el filósofo Arquímedes realizó contribuciones significativas al estudio de los principios mecánicos, incluido el uso de planos inclinados. A través de sus experimentos, Arquímedes desarrolló una comprensión avanzada de los principios de la palanca, el plano inclinado y otros dispositivos mecánicos. Hoy en día, el plano inclinado sigue siendo una herramienta esencial en la física y la ingeniería. Se utiliza para analizar el movimiento y la fuerza en situaciones en las que un objeto se desliza o se mueve sobre una superficie inclinada.
 
 ##### Matemática empleada
 Componentes de fuerzas: Cuando un objeto está sobre un plano inclinado, la fuerza gravitatoria que actúa sobre él se puede descomponer en dos componentes: una paralela al plano inclinado (llamada componente "fuerza peso" o "fuerza de la gravedad") y otra perpendicular al plano (llamada componente "fuerza normal"). Estas componentes son necesarias para determinar cómo se afecta el movimiento del objeto en el plano.
@@ -39,17 +36,59 @@ Para resolver un problema de plano inclinado, necesitas conocer el ángulo de in
 
 ##### Aplicaciones
 se utilizaron las siguientes aplicaciones:
-Python 3.11.3
+Python 3.11
 librerias:
-Mathplotlib 
 pygame 2.3
-tkinter
+tkinter 8.6
 
 ### Programación
 
 ##### Descripción de las herramientas utilizadas
 
 ##### Guia de instalación
+visual studio code:
+*Visita el sitio web oficial de Visual Studio Code en https://code.visualstudio.com/
+
+*Haz clic en el botón "Descargar" para descargar el instalador de Visual Studio Code para tu sistema operativo (Windows, macOS o Linux).
+
+*Una vez que se complete la descarga, ejecuta el archivo de instalación.
+
+*Sigue las instrucciones en pantalla y acepta los términos y condiciones de la licencia.
+
+*Durante el proceso de instalación, es posible que se te ofrezcan opciones adicionales, como la integración con el explorador de archivos o la creación de accesos directos. Puedes personalizar estas opciones según tus preferencias.
+
+*Una vez que la instalación esté completa, ejecuta Visual Studio Code desde el menú de inicio o el escritorio.
+
+*Al abrir Visual Studio Code por primera vez, es posible que se te solicite instalar algunas extensiones recomendadas. Puedes seleccionar las que desees o omitir este paso por ahora.
+
+*¡Listo! Ahora tienes Visual Studio Code instalado en tu computadora. Puedes comenzar a usarlo como editor de código para diferentes lenguajes de programación.
+
+Python:
+*Visita el sitio web oficial de Python (www.python.org) y ve a la sección de descargas.
+
+*Elige la versión de Python que deseas instalar. Recomendamos seleccionar la última versión estable disponible, ya que suele incluir mejoras y correcciones de errores.
+
+*Descarga el instalador de Python para tu sistema operativo. Asegúrate de seleccionar el instalador correspondiente a tu versión de sistema operativo (Windows, macOS, Linux, etc.) y si tu sistema es de 32 o 64 bits.
+*Una vez que se complete la descarga, ejecuta el archivo de instalación.
+
+*Durante el proceso de instalación, se te ofrecerán diferentes opciones. Asegúrate de marcar la casilla que dice "Agregar Python al PATH" (en Windows) o una opción similar (en otros sistemas operativos). Esto te permitirá ejecutar Python desde cualquier ubicación en la línea de comandos.
+
+*Continúa con la instalación siguiendo las instrucciones en pantalla y aceptando los términos y condiciones.
+
+*Una vez que la instalación esté completa, verifica que Python se haya instalado correctamente abriendo la línea de comandos y escribiendo "python" seguido de Enter. Deberías ver el intérprete de Python mostrando la versión instalada y un prompt ">>>", lo que indica que está listo para recibir comandos.
+
+Instalacion de librerias:
+La instalación de librerías en Python puede variar dependiendo del gestor de paquetes que estés utilizando. Aquí tienes un resumen de los pasos generales para instalar librerías en Python:
+
+Identifica la librería que deseas instalar. Puedes buscarla en la documentación oficial de Python o en sitios web como PyPI (Python Package Index).
+
+Abre la línea de comandos o terminal en tu sistema operativo.
+
+Utiliza el gestor de paquetes correspondiente para instalar la librería. Aquí hay algunos ejemplos:
+
+Si estás utilizando pip (el gestor de paquetes más común en Python), puedes usar el siguiente comando:
+pip install nombre_libreria
+
 
 ##### Guia de uso (Hacer uso de imágenes o un video tutorial para su uso)
 
