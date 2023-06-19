@@ -36,14 +36,36 @@ Para resolver un problema de plano inclinado, necesitas conocer el ángulo de in
 
 #### Aplicaciones
 se utilizaron las siguientes aplicaciones:
+GitHub Desktop
+Visual Studio Code
 Python 3.11
+
 librerias:
-pygame 2.3
+Mathplotlib 3.7.1
 tkinter 8.6
 
 ## Programación
 
 #### Descripción de las herramientas utilizadas
+GitHub
+GitHub es una plataforma de desarrollo colaborativo basada en la web que utiliza el sistema de control de versiones Git. Proporciona un entorno en línea para alojar y administrar repositorios de código, lo que facilita el seguimiento de cambios en el código, la colaboración entre desarrolladores y la implementación de proyectos.
+
+En GitHub, los repositorios son espacios de almacenamiento donde se guarda el código fuente de un proyecto. Los desarrolladores pueden colaborar en un repositorio trabajando juntos en el mismo código, proponiendo cambios y revisando las contribuciones de otros.
+
+Visual Studio Code
+Visual Studio Code (VS Code) es un editor de código fuente desarrollado por Microsoft. Es una herramienta altamente popular y ampliamente utilizada por programadores y desarrolladores de software debido a su combinación de características potentes, personalización y facilidad de uso.
+
+VS Code es un editor de código multiplataforma, lo que significa que está disponible para sistemas operativos como Windows, macOS y Linux, lo que permite a los desarrolladores utilizarlo en diferentes entornos. Además, es gratuito y de código abierto, lo que permite a los usuarios personalizar y extender sus funcionalidades según sus necesidades.
+
+Python
+Python es un lenguaje de programación de alto nivel, interpretado y multiparadigma. Fue creado por Guido van Rossum y lanzado por primera vez en 1991. Python se caracteriza por su sintaxis clara y legible, lo que facilita la escritura y comprensión de programas. Además, es un lenguaje que promueve la simplicidad y la facilidad de uso.
+
+Python es un lenguaje multiparadigma, lo que significa que permite programar utilizando diferentes estilos, como programación orientada a objetos, programación funcional y programación procedural. Esto proporciona flexibilidad al programador, ya que puede elegir el estilo que mejor se adapte a cada situación.
+
+Bibliotecas (librerias)
+Las bibliotecas en Python son conjuntos de código predefinido que contienen funciones, clases y métodos que se utilizan para facilitar tareas específicas. Estas bibliotecas están diseñadas para extender las capacidades del lenguaje Python y permitir a los desarrolladores aprovechar funcionalidades adicionales sin tener que implementarlas desde cero.
+
+Existen bibliotecas para prácticamente cualquier tipo de tarea que puedas imaginar, desde procesamiento de imágenes y análisis de datos hasta desarrollo web y aprendizaje automático. Estas bibliotecas se crean y mantienen tanto por la comunidad de desarrolladores de Python como por organizaciones e instituciones dedicadas.
 
 #### Guia de instalación
 visual studio code:
@@ -91,6 +113,7 @@ pip install nombre_libreria
 
 
 #### Guia de uso (Hacer uso de imágenes o un video tutorial para su uso)
+RELLENAR CON VIDEO EXPLICATIVO
 
 #### Enlace a vídeo con la explicación del código desarrollado y del fenómeno físico desarrollado.
 Explicacion Plano Inclinado: https://drive.google.com/file/d/1IUdkJv3W-gRhVYHJNdzLFTFg0fbO2AD1/view?usp=sharing
