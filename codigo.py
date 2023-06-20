@@ -1,72 +1,91 @@
-import pygame, sys
-from tkinter import *
-from pygame.locals import *
+import tkinter as tk
+from tkinter import * 
+from math import sin, cos, pi
+import math
+import pygame 
 
-main_ventana = Tk()
-main_ventana.title = ("Plano Inclinado")
+# Parámetros físicos
+masa = 1  # kg
+gravedad = 9.8  # m/s^2
+friccion = 0.2  # coeficiente de fricción
+inclinacion = 30  # ángulo de inclinación en grados
 
-ventana = Frame(main_ventana, width=1200, height=800)
-ventana.pack()
-pygame.init()
+# Constantes para la animación
+width = 600
+height = 400
+plano_color = 'gray'
+caja_color = 'red'
+caja_width = 40
+caja_height = 20
 
-WIDTH, HEIGHT = 600, 400
-ventanapy = pygame.display.set_mode((WIDTH, HEIGHT))    
-line_y = HEIGHT // 2
-line_width = WIDTH
-line_color = (0, 0, 0)
-square_size = 50
-square_x = WIDTH - square_size
-square_y = line_y - square_size // 2     
-square_speed = 2
+# Cálculo de las componentes de la gravedad
+angulo_rad = inclinacion * pi / 180
+fuerza_gravedad = masa * gravedad * sin(angulo_rad)
+fuerza_friction = friccion * fuerza_gravedad
 
-def draw():
-    ventanapy.fill((255, 255, 255))
-    pygame.draw.line(ventanapy, line_color, (0, line_y), (line_width, line_y), 10)
-    pygame.draw.rect(ventanapy, (255, 0, 0), (square_x, square_y, square_size, square_size)) 
-    pygame.display.flip()
+def ventana_principal():
+    ventana = tk.Tk()
+    ventana.title('Plano Inclinado Dinamica')
+    ventana.geometry("1280x700")
+    ventana.resizable(False, False)
+    ventana.configure(bg='#06283D')
+
+    fondo1=Frame(ventana, bg= "#47B5FF")
+    fondo1.place(x = 0, y = 0, width= 375 , height= 347)
+    fondo1.config(relief="sunken") 
+    fondo1.config(bd=10)
+
+    fondo2 = Frame(ventana, bg= "#06283D")
+    fondo2.place(x = 7, y = 9, width= 360 , height= 330)
+    fondo2.config(relief="sunken") 
+    fondo2.config(bd=2)
+
+    f1=Frame(ventana, bg= "#47B5FF")
+    f1.place(x = 0, y = 350, width= 375 , height= 350)
+    f1.config(relief="sunken") 
+    f1.config(bd=10)
+
+    f2 = Frame(ventana, bg= "#06283D")
+    f2.place(x = 5 , y = 357 , width= 365 , height= 335)
+    f2.config(relief="sunken") 
+    f2.config(bd=2)
+
+    lblMasa = tk.Label(fondo2, text="Masa (kg):",padx=20)
+    lblMasa.pack()
+    txtMasa = tk.Entry(fondo2)
+    txtMasa.pack()
+
+    lblAngulo = tk.Label(fondo2, text="Ángulo (grados):",padx=20)
+    lblAngulo.pack()
+    txtAngulo = tk.Entry(fondo2)
+    txtAngulo.pack()
+
+    lblCoefFriccion = tk.Label(fondo2, text="Coef. de Fricción:", padx=20)
+    lblCoefFriccion.pack()
+    txtCoefFriccion = tk.Entry(fondo2)
+    txtCoefFriccion.pack()
+
+    btnCalcular = tk.Button(fondo2, text="Calcular", command=calcular_plano_inclinado)
+    btnCalcular.pack()
+    ventana.mainloop()
+
+def calcular_plano_inclinado(txtMasa, txtAngulo, txtCoefFriccion,fon):
+    masa = float(txtMasa.get())
+    angulo = float(txtAngulo.get())
+    coef_friccion = float(txtCoefFriccion.get())
+
+    # Cálculos del plano inclinado
+    fuerza_gravedad = masa * 9.8  # Fuerza de gravedad en Newtons
+    fuerza_friction = coef_friccion * fuerza_gravedad * math.cos(math.radians(angulo))  # Fuerza de fricción en Newtons
+
+    # Mostrar resultados en la consola
+    print("Fuerza de gravedad:", fuerza_gravedad, "N")
+    print("Fuerza de fricción:", fuerza_friction, "N")
+
+    return
 
 
-def update_animation():
-    global square_x
-    square_x -= square_speed
-    if square_x < -square_size:
-        square_x = WIDTH
-    draw()
-    main_ventana.after(16, update_animation)
-
-
-def cuadromasa():
-    masa = Entry(ventana)
-    masa.grid(row=0, column=1, padx =10, pady= 10)
-    masa.config(fg="black", justify="right")
-    masa_label = Label(ventana, text="Peso(Kg):")
-    masa_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
-    
-def cuadroinclinacion():
-    inclinacion = Entry(ventana)
-    inclinacion.grid(row=1, column=1, padx =10, pady= 10)
-    inclinacion.config(fg="black", justify="right")
-    inclinacion_label = Label(ventana, text="Inclinación:")
-    inclinacion_label.grid(row=1, column=0, sticky="e", padx=10, pady=10)
-
-def cuadroroce():
-    roce = Entry(ventana)
-    roce.grid(row=2, column=1, padx =10, pady= 10)
-    roce.config(fg="black", justify="right")
-    roce_label = Label(ventana, text="Fuerza Roce:")
-    roce_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
-    botoncalcular = Button(ventana, text= "Calcular", command=ecuacionboton)
-    botoncalcular.grid(column=0, columnspan=2, padx=10, pady=10)
-    
-    
-def ecuacionboton():
-    pass
 
 
 
-
-update_animation()
-cuadromasa()
-cuadroinclinacion()
-cuadroroce()
-ventana.mainloop()
+ventana_principal()
