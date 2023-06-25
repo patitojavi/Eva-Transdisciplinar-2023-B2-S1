@@ -4,7 +4,7 @@
 Patricio Benavides - Rolando Castro - Nelson Quiñinao
 ## Descripción
 
-### Evento físico a simular
+## Evento físico a simular
 Plano inclinado.
 Un plano inclinado es una superficie plana que forma un ángulo con respecto a la horizontal. Se utiliza en la física para analizar el movimiento y la interacción de fuerzas en objetos. Al colocar un objeto sobre un plano inclinado, interactúa con fuerzas gravitatorias y normales. La fuerza normal contrarresta parcialmente la fuerza de gravedad, reduciendo la carga sobre el plano, mientras que la fuerza paralela al plano provoca el movimiento o deslizamiento del objeto a lo largo de la superficie inclinada. La ley de Newton y la resolución de fuerzas se utilizan para analizar las relaciones entre las fuerzas y las aceleraciones en el plano inclinado. Factores como el coeficiente de fricción y las características del objeto y el plano también se consideran en los cálculos. En resumen, un plano inclinado es una herramienta para estudiar el movimiento y las fuerzas al reducir la fuerza necesaria para mover objetos a expensas de aumentar la distancia a lo largo del plano.
 
