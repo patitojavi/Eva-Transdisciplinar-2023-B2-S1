@@ -1,6 +1,3 @@
-import tkinter as tk
-import math
-
 class PlanoInclinadoApp(tk.Tk):
     def __init__(self):
         super().__init__()
