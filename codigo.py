@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import * 
 from math import sin, cos, pi
 import math
-import pygame 
+
 
 # Parámetros físicos
 masa = 1  # kg
@@ -18,56 +18,60 @@ caja_color = 'red'
 caja_width = 40
 caja_height = 20
 
-# Cálculo de las componentes de la gravedad
-angulo_rad = inclinacion * pi / 180
-fuerza_gravedad = masa * gravedad * sin(angulo_rad)
-fuerza_friction = friccion * fuerza_gravedad
+import tkinter as tk
+from PIL import ImageTk, Image 
 
-def ventana_principal():
-    ventana = tk.Tk()
-    ventana.title('Plano Inclinado Dinamica')
-    ventana.geometry("1280x700")
-    ventana.resizable(False, False)
-    ventana.configure(bg='#06283D')
+ventana = tk.Tk()
+ventana.title("Plano Inclinado")
+ventana.geometry("1340x745")
+ventana.resizable(False, False)
 
-    fondo1=Frame(ventana, bg= "#47B5FF")
-    fondo1.place(x = 0, y = 0, width= 375 , height= 347)
-    fondo1.config(relief="sunken") 
-    fondo1.config(bd=10)
+def obtener_datos():
+    print("Datos ingresados")
+    print("="* 50)
+    print("Grado de Inclinacion:", entrada1.get())
+    print("Coeficiente de Fricción:", entrada2.get())
+    print("Masa en Kilogramos:", entrada3.get())
+    print("="* 50)
 
-    fondo2 = Frame(ventana, bg= "#06283D")
-    fondo2.place(x = 7, y = 9, width= 360 , height= 330)
-    fondo2.config(relief="sunken") 
-    fondo2.config(bd=2)
 
-    f1=Frame(ventana, bg= "#47B5FF")
-    f1.place(x = 0, y = 350, width= 375 , height= 350)
-    f1.config(relief="sunken") 
-    f1.config(bd=10)
+marco1 = tk.Frame(ventana, bg="white", width=400, height=360)
+marco1.grid(row=0, column=0, padx=1, pady=1)
+etiqueta1 = tk.Label(marco1, text="Grado de Inclinación:")
+etiqueta1.grid(row=0, column=0, padx=10, pady=10)
+entrada1 = tk.Entry(marco1)
+entrada1.grid(row=0, column=2, padx=10, pady=10)
 
-    f2 = Frame(ventana, bg= "#06283D")
-    f2.place(x = 5 , y = 357 , width= 365 , height= 335)
-    f2.config(relief="sunken") 
-    f2.config(bd=2)
+etiqueta2 = tk.Label(marco1, text="Coeficiente de Fricción:")
+etiqueta2.grid(row=1, column=0, padx=10, pady=10)
+entrada2 = tk.Entry(marco1)
+entrada2.grid(row=1, column=2, padx=10, pady=10)
 
-    lblMasa = tk.Label(fondo2, text="Masa (kg):",padx=20)
-    lblMasa.pack()
-    txtMasa = tk.Entry(fondo2)
-    txtMasa.pack()
+etiqueta3 = tk.Label(marco1, text="Masa en Kilogramos:")
+etiqueta3.grid(row=2, column=0, padx=10, pady=10)
+entrada3 = tk.Entry(marco1)
+entrada3.grid(row=2, column=2,padx=10, pady=10)
 
-    lblAngulo = tk.Label(fondo2, text="Ángulo (grados):",padx=20)
-    lblAngulo.pack()
-    txtAngulo = tk.Entry(fondo2)
-    txtAngulo.pack()
+boton_obtener_datos = tk.Button(marco1, text="Calcular:", command=obtener_datos)
+boton_obtener_datos.grid(row=3, column=1, padx=10, pady=10)
 
-    lblCoefFriccion = tk.Label(fondo2, text="Coef. de Fricción:", padx=20)
-    lblCoefFriccion.pack()
-    txtCoefFriccion = tk.Entry(fondo2)
-    txtCoefFriccion.pack()
 
-    btnCalcular = tk.Button(fondo2, text="Calcular", command=calcular_plano_inclinado)
-    btnCalcular.pack()
-    ventana.mainloop()
+
+
+marco2 = tk.Frame(ventana, bg="black", width=420, height=520)
+marco2.grid(row=1, column=0, padx=10, pady=1)
+image = Image.open("dcl_pi.png")
+photo = ImageTk.PhotoImage(image)
+imagen = tk.Label(marco2, image=photo)
+imagen.grid(row=1, column= 0)
+
+
+
+marco3 = tk.Frame(ventana, bg="black", width=880, height=730)
+marco3.grid(row=0, column=1, rowspan=2, padx=10, pady=5)
+
+
+ventana.mainloop()
 
 def calcular_plano_inclinado(txtMasa, txtAngulo, txtCoefFriccion,fon):
     masa = float(txtMasa.get())
@@ -83,9 +87,3 @@ def calcular_plano_inclinado(txtMasa, txtAngulo, txtCoefFriccion,fon):
     print("Fuerza de fricción:", fuerza_friction, "N")
 
     return
-
-
-
-
-
-ventana_principal()
