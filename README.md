@@ -120,4 +120,5 @@ pip install nombre_libreria
 Explicacion Instalacion Programas: https://drive.google.com/file/d/1z1xW_VBwNDZXHeYRIqDMuohdlX1ek-nD/view?usp=sharing
 
 ## Conclusiones
+En conclusión, el plano inclinado es una herramienta fundamental en la física para analizar el movimiento y las fuerzas que actúan sobre los objetos. Permite reducir la carga gravitatoria necesaria para mover un objeto a expensas de aumentar la distancia a lo largo del plano. Mediante la descomposición de las fuerzas en componentes paralelas y perpendiculares al plano, y aplicando las leyes del movimiento de Newton, es posible calcular la aceleración, la velocidad y la distancia recorrida por el objeto en el plano inclinado. Además, se considera la energía potencial y cinética, así como la presencia de fricción, mediante el uso de las funciones trigonométricas y la ley de fricción. El estudio y análisis de los problemas de plano inclinado permiten comprender mejor los principios fundamentales de la física y su aplicación en diversos campos de la ciencia y la ingeniería.
 
