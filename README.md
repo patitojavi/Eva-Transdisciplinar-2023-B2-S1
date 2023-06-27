@@ -113,10 +113,9 @@ pip install nombre_libreria
 
 
 ### Guia de uso (Hacer uso de imágenes o un video tutorial para su uso)
-RELLENAR CON VIDEO EXPLICATIVO
 
 ### Enlace a vídeo con la explicación del código desarrollado y del fenómeno físico desarrollado.
-Explicacion Plano Inclinado: https://drive.google.com/file/d/1IUdkJv3W-gRhVYHJNdzLFTFg0fbO2AD1/view?usp=sharing
+
 
 Explicacion Instalacion Programas: https://drive.google.com/file/d/1z1xW_VBwNDZXHeYRIqDMuohdlX1ek-nD/view?usp=sharing
 
