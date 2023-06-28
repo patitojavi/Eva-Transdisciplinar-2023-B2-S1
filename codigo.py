@@ -1,89 +1,102 @@
 import tkinter as tk
-from tkinter import * 
-from math import sin, cos, pi
 import math
+import matplotlib.pyplot as plt
+import pygame
 
+def calcular_aceleracion():
+    masa = float(entry_masa.get())
+    coef_friccion = float(entry_coef_friccion.get())
+    grado_inclinacion = float(entry_grado_inclinacion.get())
 
-# Parámetros físicos
-masa = 1  # kg
-gravedad = 9.8  # m/s^2
-friccion = 0.2  # coeficiente de fricción
-inclinacion = 30  # ángulo de inclinación en grados
+    angulo_radianes = math.radians(grado_inclinacion)
+    aceleracion = (math.sin(angulo_radianes) - coef_friccion * math.cos(angulo_radianes)) * 9.8
 
-# Constantes para la animación
-width = 600
-height = 400
-plano_color = 'gray'
-caja_color = 'red'
-caja_width = 40
-caja_height = 20
+    lbl_resultado.configure(text=f"Aceleración: {aceleracion:.2f} m/s^2")
 
-import tkinter as tk
-from PIL import ImageTk, Image 
+def mostrar_grafico():
+    masa = float(entry_masa.get())
+    coef_friccion = float(entry_coef_friccion.get())
+    tiempo = range(0, 10)
+    aceleraciones = []
+
+    for t in tiempo:
+        aceleracion = coef_friccion * t
+        aceleraciones.append(aceleracion)
+
+    plt.plot(tiempo, aceleraciones)
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Aceleración (m/s^2)')
+    plt.title('Gráfico de Aceleración en función del Tiempo')
+    plt.grid(True)
+    plt.show()
+
+def mostrar_animacion():
+    pygame.init()
+    width = 800
+    height = 600
+    WHITE = (255, 255, 255)
+    BLACK = (0, 0, 0)
+    RED = (255, 0, 0)
+    screen = pygame.display.set_mode((width, height))
+    pygame.display.set_caption("Plano inclinado")
+    x = 100  
+    y = 100  
+    radio = 25 
+    velocidad = 3 
+    angulo = math.radians(30)
+
+    posicion_x = x
+    posicion_y = y
+    velocidad_x = velocidad * math.cos(angulo)
+    velocidad_y = velocidad * math.sin(angulo)
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        posicion_x += velocidad_x
+        posicion_y += velocidad_y
+        if posicion_y >= height - radio * math.cos(angulo):
+            posicion_x = x
+            posicion_y = y
+        screen.fill(WHITE)
+        pygame.draw.circle(screen, RED, (int(posicion_x), int(posicion_y)), radio)
+        pygame.draw.line(screen, BLACK, (1,68), (799,534), 2)
+        pygame.display.flip()
+        pygame.time.Clock().tick(60)
+    pygame.quit()
 
 ventana = tk.Tk()
-ventana.title("Plano Inclinado")
-ventana.geometry("1340x745")
+ventana.title("Cálculo de Aceleración")
+ventana.geometry("400x400")
 ventana.resizable(False, False)
 
-def obtener_datos():
-    print("Datos ingresados")
-    print("="* 50)
-    print("Grado de Inclinacion:", entrada1.get())
-    print("Coeficiente de Fricción:", entrada2.get())
-    print("Masa en Kilogramos:", entrada3.get())
-    print("="* 50)
+lbl_masa = tk.Label(ventana, text="Masa (kg):")
+lbl_masa.pack()
+entry_masa = tk.Entry(ventana)
+entry_masa.pack()
 
+lbl_coef_friccion = tk.Label(ventana, text="Coeficiente de fricción:")
+lbl_coef_friccion.pack()
+entry_coef_friccion = tk.Entry(ventana)
+entry_coef_friccion.pack()
 
-marco1 = tk.Frame(ventana, bg="white", width=400, height=360)
-marco1.grid(row=0, column=0, padx=1, pady=1)
-etiqueta1 = tk.Label(marco1, text="Grado de Inclinación:")
-etiqueta1.grid(row=0, column=0, padx=10, pady=10)
-entrada1 = tk.Entry(marco1)
-entrada1.grid(row=0, column=2, padx=10, pady=10)
+lbl_grado_inclinacion = tk.Label(ventana, text="Grado de inclinación:")
+lbl_grado_inclinacion.pack()
+entry_grado_inclinacion = tk.Entry(ventana)
+entry_grado_inclinacion.pack()
 
-etiqueta2 = tk.Label(marco1, text="Coeficiente de Fricción:")
-etiqueta2.grid(row=1, column=0, padx=10, pady=10)
-entrada2 = tk.Entry(marco1)
-entrada2.grid(row=1, column=2, padx=10, pady=10)
+btn_calcular = tk.Button(ventana, text="Calcular Aceleración", command=calcular_aceleracion)
+btn_calcular.pack()
 
-etiqueta3 = tk.Label(marco1, text="Masa en Kilogramos:")
-etiqueta3.grid(row=2, column=0, padx=10, pady=10)
-entrada3 = tk.Entry(marco1)
-entrada3.grid(row=2, column=2,padx=10, pady=10)
+lbl_resultado = tk.Label(ventana, text="Aceleración: ")
+lbl_resultado.pack()
 
-boton_obtener_datos = tk.Button(marco1, text="Calcular:", command=obtener_datos)
-boton_obtener_datos.grid(row=3, column=1, padx=10, pady=10)
+btn_grafico = tk.Button(ventana, text="Mostrar Gráfico", command=mostrar_grafico)
+btn_grafico.pack()
 
-
-
-
-marco2 = tk.Frame(ventana, bg="black", width=420, height=520)
-marco2.grid(row=1, column=0, padx=10, pady=1)
-image = Image.open("dcl_pi.png")
-photo = ImageTk.PhotoImage(image)
-imagen = tk.Label(marco2, image=photo)
-imagen.grid(row=1, column= 0)
-
-
-
-marco3 = tk.Frame(ventana, bg="black", width=880, height=730)
-marco3.grid(row=0, column=1, rowspan=2, padx=10, pady=5)
-
+btn_animacion = tk.Button(ventana, text="Mostrar Animación", command=mostrar_animacion)
+btn_animacion.pack()
 
 ventana.mainloop()
-
-def calcular_plano_inclinado(txtMasa, txtAngulo, txtCoefFriccion,fon):
-    masa = float(txtMasa.get())
-    angulo = float(txtAngulo.get())
-    coef_friccion = float(txtCoefFriccion.get())
-
-    # Cálculos del plano inclinado
-    fuerza_gravedad = masa * 9.8  # Fuerza de gravedad en Newtons
-    fuerza_friction = coef_friccion * fuerza_gravedad * math.cos(math.radians(angulo))  # Fuerza de fricción en Newtons
-
-    # Mostrar resultados en la consola
-    print("Fuerza de gravedad:", fuerza_gravedad, "N")
-    print("Fuerza de fricción:", fuerza_friction, "N")
-
-    return
