@@ -1,4 +1,4 @@
-#Explicacion Instalacion Programas: # Eva-Transdisciplinar-2023-B2-S1
+# Eva-Transdisciplinar-2023-B2-S1
 ## Plano Inclinado(Dinamica) - B2-S1
 ## Integrantes 
 Patricio Benavides - Rolando Castro - Nelson Quiñinao
