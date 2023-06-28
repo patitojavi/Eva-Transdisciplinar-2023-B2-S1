@@ -42,7 +42,7 @@ def mostrar_animacion():
     x = 100  
     y = 100  
     radio = 25 
-    velocidad = 3 
+    velocidad = 2
     angulo = math.radians(30)
 
     posicion_x = x
@@ -64,7 +64,7 @@ def mostrar_animacion():
         pygame.draw.circle(screen, RED, (int(posicion_x), int(posicion_y)), radio)
         pygame.draw.line(screen, BLACK, (1,68), (799,534), 2)
         pygame.display.flip()
-        pygame.time.Clock().tick(60)
+        pygame.time.Clock().tick(120)
     pygame.quit()
 
 ventana = tk.Tk()
